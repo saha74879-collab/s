@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    /* Subtle, clean gradient */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+    position: relative;
+    /* For background particles */
+}
+
+/* Floating Particle Animation */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+        transform: translateY(90vh) scale(1);
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.floating-emoji {
+    position: absolute;
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 15s linear forwards;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    /* Soft, deep shadow */
+    max-width: 480px;
+    width: 90%;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #2d3436;
+    font-family: 'Playfair Display', serif;
+    /* Elegant serif for the heading */
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+h1 span {
+    display: block;
+    font-size: 0.5em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #636e72;
+    margin-top: 10px;
+}
+
+.gif-container img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 12px;
+    margin: 30px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.gif-container img:hover {
+    transform: scale(1.02);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    margin-top: 10px;
+}
+
+button {
+    padding: 14px 32px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+#yes-btn {
+    background-color: #00b894;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+#yes-btn:hover {
+    background-color: #00a884;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+#no-btn {
+    background-color: #ff7675;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 118, 117, 0.3);
+}
+
+#no-btn:hover {
+    background-color: #d63031;
+    box-shadow: 0 6px 20px rgba(214, 48, 49, 0.4);
+}
+
+/* Success State Styles */
+body.success-bg {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
